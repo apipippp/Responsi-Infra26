@@ -4,7 +4,7 @@
 
 | Keterangan  | Isi                                              |
 | ----------- | ------------------------------------------------ |
-| Nama        | Apip Nur Rahman                                  |
+| Nama        | Afif Nur Rahman                                  |
 | NIM         | H1H024016                                        |
 | Environment | VirtualBox Ubuntu 24.04                          |
 | Repository  | Responsi-Infra26                                 |
