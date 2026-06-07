@@ -1,0 +1,81 @@
+version: "3.9"
+
+services:
+  nginx:
+    build:
+      context: ./nginx
+    container_name: nginx-lb
+    ports:
+      - "8080:80"
+    depends_on:
+      - web1
+      - web2
+      - web3
+    networks:
+      - frontend
+
+  web1:
+    build:
+      context: ./web1
+    container_name: web1
+    environment:
+      DB_HOST: db
+      DB_NAME: responsi
+      DB_USER: student
+      DB_PASS: student123
+    depends_on:
+      - db
+    networks:
+      - frontend
+      - backend
+
+  web2:
+    build:
+      context: ./web2
+    container_name: web2
+    environment:
+      DB_HOST: db
+      DB_NAME: responsi
+      DB_USER: student
+      DB_PASS: student123
+    depends_on:
+      - db
+    networks:
+      - frontend
+      - backend
+
+  web3:
+    build:
+      context: ./web3
+    container_name: web3
+    environment:
+      DB_HOST: db
+      DB_NAME: responsi
+      DB_USER: student
+      DB_PASS: student123
+    depends_on:
+      - db
+    networks:
+      - frontend
+      - backend
+
+  db:
+    build:
+      context: ./db
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: responsi
+      MYSQL_USER: student
+      MYSQL_PASSWORD: student123
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - backend
+
+volumes:    
+  db-data:
+
+networks:
+  frontend:
+  backend:
