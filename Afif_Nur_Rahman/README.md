@@ -788,3 +788,23 @@ Berdasarkan hasil troubleshooting, sistem awal belum dapat berjalan karena terda
 Setelah dilakukan perbaikan, seluruh container berhasil berjalan. Aplikasi dapat diakses melalui `localhost:8080`, dan Nginx berhasil meneruskan request ke tiga web server backend secara bergantian.
 
 Dengan demikian, sistem sudah berjalan sesuai tujuan responsi, yaitu menjalankan aplikasi multi-container menggunakan Docker Compose dengan Nginx sebagai load balancer.
+
+# Dokumentasi
+
+### Web 1
+
+![web1.png](./dokumentasi/web1.png)
+
+---
+
+### Web 2
+
+![web2.png](./dokumentasi/web2.png)
+
+---
+
+### Web 3
+
+![web3.png](./dokumentasi/web3.png)
+
+---
